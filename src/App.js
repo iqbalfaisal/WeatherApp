@@ -12,33 +12,18 @@ function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{
-              headerStyle: {
-                backgroundColor: '#00804A',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
-            name="HomeScreen"
-            component={HomeScreen}
-          />
-          <Stack.Screen
-            options={{
-              headerStyle: {
-                backgroundColor: '#00804A',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
-            name="WeatherScreen"
-            component={WeatherScreen}
-          />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#00804A',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="WeatherScreen" component={WeatherScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

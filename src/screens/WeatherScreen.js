@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MapView from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {View, Text, StyleSheet} from 'react-native';
 
 function WeatherScreen({
@@ -13,13 +13,18 @@ function WeatherScreen({
   return (
     <>
       <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.map}
         region={{
           latitude: data.coord.lat,
           longitude: data.coord.lon,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
-        }}
-      />
+        }}>
+        <Marker
+          coordinate={{latitude: data.coord.lat, longitude: data.coord.lon}}
+        />
+      </MapView>
       <View
         style={{
           position: 'absolute',
@@ -67,6 +72,9 @@ function WeatherScreen({
 }
 
 const styles = StyleSheet.create({
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
   weather: {
     fontSize: 14,
     color: 'black',

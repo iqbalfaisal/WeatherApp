@@ -1,4 +1,4 @@
-import {SET_ALL} from './types';
+import {SET_ALL} from './Types';
 
 const initialState = {data: null};
 

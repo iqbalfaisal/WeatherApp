@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
   weather: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'black',
     paddingVertical: 5,
   },
